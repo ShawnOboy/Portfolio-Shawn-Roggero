@@ -1,0 +1,52 @@
+.titleMatrix {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+    
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+    text-decoration: underline;
+
+    z-index: -4;
+
+    @media screen and (min-width: 700px) {
+
+        margin: 2rem 0 0 0;
+        font-size: 2rem;
+        
+    }
+
+    @media screen and (min-width: 1100px) {
+
+        margin: 4rem 0 0 0;
+        font-size: 3rem;
+        
+    }
+
+    @media screen and (min-width: 1400px) {
+
+        margin: 6rem 0 0 0;
+        font-size: 4rem;
+        
+    }
+
+    h1 {
+
+        margin: 0;
+
+        &:nth-child(1) {
+    
+            color: rgb(255, 123, 0);
+            text-shadow: -0.5rem -0.3rem rgba(255, 190, 130, 0.5), 0.5rem 0.3rem  rgba(126, 61, 0, 0.5);
+
+            z-index: -3;
+    
+        }
+
+    }
+
+}
