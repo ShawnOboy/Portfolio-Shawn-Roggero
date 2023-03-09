@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/portfolio-shawn-roggero/static/css/main.96f7874b.css",
-    "main.js": "/portfolio-shawn-roggero/static/js/main.00c57b22.js",
-    "index.html": "/portfolio-shawn-roggero/index.html",
-    "main.96f7874b.css.map": "/portfolio-shawn-roggero/static/css/main.96f7874b.css.map",
-    "main.00c57b22.js.map": "/portfolio-shawn-roggero/static/js/main.00c57b22.js.map"
+    "main.css": "/Portfolio-Shawn-Roggero/static/css/main.96f7874b.css",
+    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.00c57b22.js",
+    "index.html": "/Portfolio-Shawn-Roggero/index.html",
+    "main.96f7874b.css.map": "/Portfolio-Shawn-Roggero/static/css/main.96f7874b.css.map",
+    "main.00c57b22.js.map": "/Portfolio-Shawn-Roggero/static/js/main.00c57b22.js.map"
   },
   "entrypoints": [
     "static/css/main.96f7874b.css",
