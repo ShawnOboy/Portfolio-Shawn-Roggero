@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useInterval from "@use-it/interval"
 
-const validChar = "01";
+const validChar = "SRsr";
 const changeProbability = 0.02;
 
 const minStreamSize = 15;

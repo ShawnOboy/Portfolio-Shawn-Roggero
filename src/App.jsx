@@ -12,10 +12,9 @@ export default function App() {
         <TitleMatrix />
 
         <div className="screenSpace"></div>
-        <div className="portfolioBackground">
-            <CorruptionLayer />
-            <CorruptionLayer />
-        </div>
+
+        <CorruptionLayer number={32} />
+
 
         <section className='mainPortfolio'>
 
