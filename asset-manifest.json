@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-Shawn-Roggero/static/css/main.d1d447d6.css",
-    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.f60d4cfc.js",
+    "main.css": "/Portfolio-Shawn-Roggero/static/css/main.781d7068.css",
+    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.2f889c53.js",
     "static/media/misaryes.png": "/Portfolio-Shawn-Roggero/static/media/misaryes.9cb36bc499db12d6c653.png",
     "static/media/aregon.png": "/Portfolio-Shawn-Roggero/static/media/aregon.1e43a51012a8055ad112.png",
     "static/media/vehicule.png": "/Portfolio-Shawn-Roggero/static/media/vehicule.61eb0cd5bfcb00c1bc21.png",
@@ -10,11 +10,11 @@
     "static/media/myosotis.png": "/Portfolio-Shawn-Roggero/static/media/myosotis.8b43d1e69dd64cc68427.png",
     "static/media/dashout.png": "/Portfolio-Shawn-Roggero/static/media/dashout.de3ca7294b707b30b50d.png",
     "index.html": "/Portfolio-Shawn-Roggero/index.html",
-    "main.d1d447d6.css.map": "/Portfolio-Shawn-Roggero/static/css/main.d1d447d6.css.map",
-    "main.f60d4cfc.js.map": "/Portfolio-Shawn-Roggero/static/js/main.f60d4cfc.js.map"
+    "main.781d7068.css.map": "/Portfolio-Shawn-Roggero/static/css/main.781d7068.css.map",
+    "main.2f889c53.js.map": "/Portfolio-Shawn-Roggero/static/js/main.2f889c53.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1d447d6.css",
-    "static/js/main.f60d4cfc.js"
+    "static/css/main.781d7068.css",
+    "static/js/main.2f889c53.js"
   ]
 }
