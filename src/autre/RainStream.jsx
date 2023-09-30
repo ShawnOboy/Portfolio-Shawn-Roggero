@@ -43,7 +43,7 @@ const RainStream = props => {
         }
         else {
 
-            setTopPadding(topPadding + (window.innerWidth / 71.641791));
+            setTopPadding(topPadding + (window.innerWidth / 73.75));
             setStream(changeStream);
 
         }

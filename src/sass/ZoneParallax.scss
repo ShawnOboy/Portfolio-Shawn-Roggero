@@ -1,0 +1,101 @@
+.ZoneParallax {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 7;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 10rem;
+
+    a {
+        
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 888;
+        
+        &:hover {
+            
+            cursor: pointer;
+            
+        }
+
+    }
+    
+    div {
+    
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: 1rem;
+        margin: 1rem 4rem -8rem 4rem;
+        
+    }
+    
+}
+
+.myosotis {background-image: url("../img/myosotis.png"); width: 28vw; height: 40vh;}
+
+.equanimity {background-image: url("../img/equanimity.png"); width: 20vw; height: 25vh;}
+
+.dashout {background-image: url("../img/dashout.png"); width: 20vw; height: 30vh;}
+
+.misaryes {background-image: url("../img/misaryes.png"); width: 30vw; height: 40vh;}
+
+.aregon {background-image: url("../img/aregon.png"); width: 25vw; height: 35vh;}
+
+.memo {background-image: url("../img/memo.png"); width: 25vw; height: 35vh;}
+
+.talisman {background-image: url("../img/talisman.jpg"); width: 30vw; height: 40vh;}
+
+.vehicule {background-image: url("../img/vehicule.png"); width: 15vw; height: 25vh;}
+
+.sideA {
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #ff7b00;
+
+    z-index: 8;
+
+}
+
+.sideW {
+
+    position: absolute;
+    padding: 6px;
+    width: 100%;
+    height: 50%;
+    border-left: 10px solid #000;
+    border-right: 10px solid #000;
+
+    z-index: 9;
+
+    
+}
+
+.sideH {
+
+    position: absolute;
+    padding: 6px;
+    width: 50%;
+    height: 100%;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
+
+    z-index: 9;
+
+}

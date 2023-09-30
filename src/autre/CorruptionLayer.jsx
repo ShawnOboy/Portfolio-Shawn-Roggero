@@ -25,7 +25,7 @@ export default function CorruptionLayer({number}) {
     useEffect(() => {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [scroll]);
 
     return (
         

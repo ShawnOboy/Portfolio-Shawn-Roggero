@@ -1,0 +1,44 @@
+:root {
+
+  // Couleur
+  .theme-clair {
+    --couleur-principale: #adad9f;
+    --couleur-secondaire: #d8dbde;
+    --couleur-accent: #FF7B00;
+    --couleur-fond: #e8e5e3;
+    --couleur-texte: #0E0D0C;
+    /* Add other Clair theme styles here */
+  }
+  
+  .theme-sombre {
+    --couleur-principale: #606052;
+    --couleur-secondaire: #212427;
+    --couleur-accent: #FF7B00;
+    --couleur-fond: #1C1917;
+    --couleur-texte: #f3f2f1;
+    /* Add other Sombre theme styles here */
+  }
+
+  // Mesure
+  --mesure-padding-petit: 1rem;
+  --mesure-padding-texte: 2rem;
+  --mesure-padding-titre: 3rem;
+
+  // Taille de caractère
+  --taille-mobile-petit: 12px;
+  --taille-tablette-petit: 12px;
+  --taille-bureau-petit: 1.25rem;
+
+  --taille-mobile-moyen: 12px;
+  --taille-tablette-moyen: 12px;
+  --taille-bureau-moyen: 1.75rem;
+
+  --taille-mobile-grand: 12px;
+  --taille-tablette-grand: 12px;
+  --taille-bureau-grand: 2.25rem;
+
+  // Police
+  --police-header: "Orbitron", monospace;
+  --police-text: "Didact Gothic", monospace;
+
+}

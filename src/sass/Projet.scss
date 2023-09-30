@@ -1,0 +1,115 @@
+.les_Projets {
+
+  margin: auto;
+
+  width: calc(70% + 4rem);
+  
+  &.multiple-projects {
+    width: calc(50% + 4rem);
+  }
+
+  .flex_projets {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 2rem;
+
+    .Projet {
+    
+      width: 25dvw;
+      height: 25dvh;
+    
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    
+      background-color: #f0f0f0;
+      padding: 10px;
+    
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    
+      .overlay {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+    
+        width: 100%;
+        height: 100%;
+    
+        h1 {
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .Projet_seul {
+
+      width: 100%;
+      height: 70dvh;
+    
+      padding: 10px;
+
+      box-sizing: border-box;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      section {
+
+        width: 49%;
+        height: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: left;
+
+        h1, p, a, button {
+
+          padding: 0;
+
+        }
+
+      }
+
+      .tags {
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+      .fermer_projet {
+
+        width: 5%;
+        height: 5%;
+
+      }
+
+      .img_projet {
+
+        width: 100%;
+        height: 90%;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        border: 1px solid #ccc;
+
+      }
+
+    }
+
+  }
+}

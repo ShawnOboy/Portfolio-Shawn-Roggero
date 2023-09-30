@@ -1,0 +1,71 @@
+import { Route, Routes} from 'react-router-dom';
+
+import '../sass/App.scss';
+
+import Accueil from './Accueil';
+import Header from './Header';
+import Footer from './Footer';
+import Page_404 from './Page_404';
+import A_Propos from './A_Propos';
+import Projets from './Projets';
+import Projet from './Projet';
+import { useEffect, useState } from 'react';
+
+export default function App() {
+
+  const [theme, setTheme] = useState(() => {
+    const themeSauvegarde = localStorage.getItem('theme-sr');
+
+    if(themeSauvegarde === "clair" || themeSauvegarde === "sombre") {
+      return themeSauvegarde;
+    }
+    else {
+      return "clair";
+    }
+  });
+
+  const [langue, setLangue] = useState(() => {
+    const langueSauvegarde = localStorage.getItem('langue-sr');
+
+    if(langueSauvegarde === "fr" || langueSauvegarde === "en") {
+      return langueSauvegarde;
+    }
+    else {
+      return "fr";
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme-sr', theme);
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
+  
+  useEffect(() => {
+    localStorage.setItem('langue-sr', langue);
+  }, [langue]);
+
+  return (
+    <div className="App">
+
+      <Header theme={theme} setTheme={setTheme} langue={langue} setLangue={setLangue} />
+
+      <Routes>
+        <Route exact path='/Portfolio-Shawn-Roggero/' element={< Accueil langue={langue} />} ></Route> {/*Page par défaut*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/accueil" element={< Accueil langue={langue} />} ></Route> {/*Page d'accueil*/}
+
+        <Route exact path="/Portfolio-Shawn-Roggero/a-propos" element={< A_Propos langue={langue} />} ></Route> {/*Page à propos de moi*/}
+
+        <Route exact path="/Portfolio-Shawn-Roggero/projets" element={< Projets langue={langue} />} ></Route> {/*Page de projets*/}
+
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/jeux" element={< Projet langue={langue} filtre={"jeux"} />} ></Route> {/*Page de projets jeux*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/web" element={< Projet langue={langue} filtre={"web"} />} ></Route> {/*Page de projets web*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/creation" element={< Projet langue={langue} filtre={"creation"} />} ></Route> {/*Page de projets creation*/}
+
+        <Route path='*' element={< Page_404 langue={langue} />} ></Route>
+      </Routes>
+
+      <Footer />
+
+    </div>
+  );
+}
