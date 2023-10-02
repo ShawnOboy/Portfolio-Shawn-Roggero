@@ -1,20 +1,27 @@
 {
   "files": {
-    "main.css": "/Portfolio-Shawn-Roggero/static/css/main.ce5f2761.css",
-    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.7ae3f800.js",
+    "main.css": "/Portfolio-Shawn-Roggero/static/css/main.e51d02f5.css",
+    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.feb47a2b.js",
     "static/media/misaryes.png": "/Portfolio-Shawn-Roggero/static/media/misaryes.9cb36bc499db12d6c653.png",
     "static/media/vehicule.png": "/Portfolio-Shawn-Roggero/static/media/vehicule.61eb0cd5bfcb00c1bc21.png",
     "static/media/equanimity.png": "/Portfolio-Shawn-Roggero/static/media/equanimity.8335f5967109633ff852.png",
+    "static/media/section_projets_creation.png": "/Portfolio-Shawn-Roggero/static/media/section_projets_creation.80114ee49fdae539f6f5.png",
+    "static/media/section_projets_web.png": "/Portfolio-Shawn-Roggero/static/media/section_projets_web.e95996c07e5694d6fe7c.png",
+    "static/media/section_projets_jeux.png": "/Portfolio-Shawn-Roggero/static/media/section_projets_jeux.c7e4822cef180ce2b82d.png",
     "static/media/aregon.png": "/Portfolio-Shawn-Roggero/static/media/aregon.dc7f9738cdc88ad7019a.png",
     "static/media/talisman.jpg": "/Portfolio-Shawn-Roggero/static/media/talisman.d0bb9d8823bbd6ee0abb.jpg",
     "static/media/myosotis.png": "/Portfolio-Shawn-Roggero/static/media/myosotis.8b43d1e69dd64cc68427.png",
     "static/media/dashout.png": "/Portfolio-Shawn-Roggero/static/media/dashout.de3ca7294b707b30b50d.png",
+    "static/media/TIM_Web.png": "/Portfolio-Shawn-Roggero/static/media/TIM_Web.eb8b9d5a12fb9fec1090.png",
+    "static/media/Resume_Roggero_Shawn.pdf": "/Portfolio-Shawn-Roggero/static/media/Resume_Roggero_Shawn.fbc1cb959872478fe5cd.pdf",
+    "static/media/logo_portfolio_clair.png": "/Portfolio-Shawn-Roggero/static/media/logo_portfolio_clair.a8dcffd128bec77fe31e.png",
+    "static/media/logo_portfolio_sombre.png": "/Portfolio-Shawn-Roggero/static/media/logo_portfolio_sombre.1c317bca114084104e79.png",
     "index.html": "/Portfolio-Shawn-Roggero/index.html",
-    "main.ce5f2761.css.map": "/Portfolio-Shawn-Roggero/static/css/main.ce5f2761.css.map",
-    "main.7ae3f800.js.map": "/Portfolio-Shawn-Roggero/static/js/main.7ae3f800.js.map"
+    "main.e51d02f5.css.map": "/Portfolio-Shawn-Roggero/static/css/main.e51d02f5.css.map",
+    "main.feb47a2b.js.map": "/Portfolio-Shawn-Roggero/static/js/main.feb47a2b.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce5f2761.css",
-    "static/js/main.7ae3f800.js"
+    "static/css/main.e51d02f5.css",
+    "static/js/main.feb47a2b.js"
   ]
 }
