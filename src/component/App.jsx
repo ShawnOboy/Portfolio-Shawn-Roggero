@@ -10,6 +10,7 @@ import A_Propos from './A_Propos';
 import Projets from './Projets';
 import Projet from './Projet';
 import { useEffect, useState } from 'react';
+import { projets } from '../code/projets';
 
 export default function App() {
 
@@ -35,6 +36,12 @@ export default function App() {
     }
   });
 
+  const [lesProjets, setLesProjets] = useState(null);
+
+  useEffect(() => {
+    setLesProjets(projets[langue])
+  }, [langue]);
+
   useEffect(() => {
     localStorage.setItem('theme-sr', theme);
     document.body.className = `theme-${theme}`;
@@ -57,14 +64,14 @@ export default function App() {
 
         <Route exact path="/Portfolio-Shawn-Roggero/projets" element={< Projets langue={langue} />} ></Route> {/*Page de projets*/}
 
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/jeux" element={< Projet langue={langue} filtre={"jeux"} />} ></Route> {/*Page de projets jeux*/}
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/web" element={< Projet langue={langue} filtre={"web"} />} ></Route> {/*Page de projets web*/}
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/creation" element={< Projet langue={langue} filtre={"creation"} />} ></Route> {/*Page de projets creation*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/jeux" element={< Projet langue={langue} filtre={"jeux"} lesProjets={lesProjets} />} ></Route> {/*Page de projets jeux*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/web" element={< Projet langue={langue} filtre={"web"} lesProjets={lesProjets} />} ></Route> {/*Page de projets web*/}
+        <Route exact path="/Portfolio-Shawn-Roggero/projets/creation" element={< Projet langue={langue} filtre={"creation"} lesProjets={lesProjets} />} ></Route> {/*Page de projets creation*/}
 
         <Route path='*' element={< Page_404 langue={langue} />} ></Route>
       </Routes>
 
-      <Footer />
+      <Footer langue={langue} />
 
     </div>
   );

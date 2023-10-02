@@ -7,8 +7,13 @@
 
   row-gap: 3rem;
 
-  width: 100dvw;
+  width: 50dvw;
   height: auto;
+
+  padding: 2rem 0;
+
+  border-top: 2px solid var(--couleur-texte);
+  border-bottom: 2px solid var(--couleur-texte);
 
   .projets-jeux, .projets-web, .projets-creation {
 
@@ -21,7 +26,7 @@
 
     width: 30dvw;
     height: 25dvh;
-    border: 2px solid white;
+    border: var(--border-img);
 
     background-position: center;
     background-repeat: no-repeat;
@@ -35,13 +40,13 @@
   }
 
   .projets-jeux {
-    background-image: url("../img/equanimity.png");
+    background-image: url("../img/section_projets_jeux.png");
   }
   .projets-web {
-    background-image: url("../img/memo.png");
+    background-image: url("../img/section_projets_web.png");
   }
   .projets-creation {
-    background-image: url("../img/talisman.jpg");
+    background-image: url("../img/section_projets_creation.png");
   }
 
 }

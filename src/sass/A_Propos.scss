@@ -1,0 +1,21 @@
+.A_Propos {
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  row-gap: 1rem;
+
+  width: 60dvw;
+
+  h2 {
+    font-size: 2rem;
+    align-self: center;
+  }
+
+  p {
+    padding-bottom: 2rem;
+  }
+
+}

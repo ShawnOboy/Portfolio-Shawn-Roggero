@@ -3,6 +3,7 @@ import '../sass/Header.scss'
 
 import { Link } from "react-router-dom";
 import { texts } from '../code/textes';
+import { logos } from '../code/logo';
 
 export default function Header({theme, setTheme, langue, setLangue}) {
 
@@ -16,16 +17,17 @@ export default function Header({theme, setTheme, langue, setLangue}) {
 
   return (
     <div className='Header'>
-      <Link to={"/Portfolio-Shawn-Roggero/accueil"} className='logo'>
-        <img src="" alt={texts[langue].header.logo} />
-      </Link>
       <FormGroup>
         <FormControlLabel
           onClick={toggleTheme}
           control={<Switch checked={theme === 'sombre'} />}
           label={texts[langue].header.theme + texts[langue].header[theme]}
         />
-
+      </FormGroup>
+      <Link to={"/Portfolio-Shawn-Roggero/accueil"} className='logo'>
+        <img src={logos[theme]} alt={texts[langue].header.logo} />
+      </Link>
+      <FormGroup>
         <FormControlLabel
           onClick={toggleLangue}
           control={<Switch checked={langue === 'en'} />}

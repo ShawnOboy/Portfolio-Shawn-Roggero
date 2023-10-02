@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
 
+  box-sizing: border-box;
   font-family: var(--police-text);
+
 
 }
 
@@ -13,6 +15,22 @@ body, html {
   background-color: var(--couleur-fond);
 
   overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--couleur-principale); 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: var(--couleur-accent); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff9f45; 
+  }
 
 }
 
@@ -34,5 +52,6 @@ h1 {
   font-family: var(--police-header);
   padding: var(--mesure-padding-titre);
   color: var(--couleur-accent);
+  text-shadow: var(--shadow-texte-img);
 
 }

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { projets } from '../code/projets';
 import '../sass/Projet.scss';
 import { texts } from '../code/textes';
 
-export default function Projet({ langue, filtre }) {
-  const projetsFiltre = Object.values(projets[langue]?.[filtre] || {});
+export default function Projet({ langue, filtre, lesProjets }) {
+  const projetsFiltre = Object.values(lesProjets[filtre] || {});
   const [projetChoisi, setProjetChoisi] = useState(null);
 
   const choixProjet = (projet) => {
@@ -47,13 +46,10 @@ export default function Projet({ langue, filtre }) {
   };
 
   const renderProjet = (projet, index) => (
-    <div
-      key={index}
-      className='Projet'
-      style={{ backgroundImage: `url(${projet.img})` }}
-      onClick={() => choixProjet(projet)}
-    >
+    <div className='Projet' onClick={() => choixProjet(projet)}>
+      <div className='image' key={index} style={{ backgroundImage: `url(${projet.img})` }}></div>
       <div className="overlay">
+        <p></p>
         <h1>{projet.nom}</h1>
         <p>{texts[langue].projet.plus}</p>
       </div>

@@ -3,8 +3,9 @@ import '../sass/Accueil.scss'
 import DownloadIcon from '@mui/icons-material/Download';
 import A_Propos from './A_Propos';
 import Projets from './Projets';
-import { FormControlLabel, FormGroup, Switch } from '@mui/material';
 import { texts } from '../code/textes';
+
+import Resume from '../Resume_Roggero_Shawn.pdf';
 
 export default function Accueil({langue}) {
 
@@ -17,12 +18,12 @@ export default function Accueil({langue}) {
       <Projets langue={langue} />
 
       <div className='cv'>
-        <div className='cv_ouvrir'>
+        <a target='_blank' href={Resume} className='cv_ouvrir'>
           {texts[langue].accueil.cv}
-        </div>
-        <div className='cv_download'>
+        </a>
+        <a href={Resume} download="resume_roggero_shawn.pdf" className='cv_download'>
           <DownloadIcon />
-        </div>
+        </ a>
       </div>
     </div>
   );

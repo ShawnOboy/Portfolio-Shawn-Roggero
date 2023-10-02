@@ -1,9 +1,8 @@
-// import './A_Propos.scss'
+import '../sass/A_Propos.scss'
 
 import { texts } from "../code/textes";
 
 export default function A_Propos({langue}) {
-  console.log("La langue: " + langue);
   return (
     <div className='A_Propos'>
       <h2>{texts[langue].propos.premier_titre}</h2>

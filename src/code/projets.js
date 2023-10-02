@@ -7,7 +7,7 @@ import dashout from '../img/dashout.png'
 
 // Web
 import memo from '../img/memo.png'
-// import timweb from '../img/timweb.png'
+import timweb from '../img/TIM_Web.png'
 
 // Création
 import talisman from '../img/talisman.jpg'
@@ -82,7 +82,7 @@ export const projets = {
   
         nom: "TIM Maisonneuve",
         description: "Ce projet consiste à refaire le site web du département de la Technique d'Intégration Multimédia (TIM) de Maisonneuve en utilisant 'Wordpress'. Mon équipe et moi avons pris ce projet beaucoup plus loin en utilisant nos compétences de 'React' pour le 'front-end' et le CMS de 'Wordpress' pour notre 'back-end' en utilisant leur API REST. Les difficultés du projet sont d'utiliser 'React' et 'Wordpress' ensemble, créer une application qui peut avoir plusieurs pages, introduire plusieur petit concept comme changement de langue, changement de thème, des témoignages qui défilent automatiquement ou simplement des animations qui rendent la navigation meilleur afin que nos utilisateurs aient la meilleur expérience et qu'ils voient le TIM comme la prochaine étape de leur vie.",
-        img: memo,
+        img: timweb,
         lien: "https://shawnoboy.github.io/Projet-Web-2023/",
         tag: ["React", "Wordpress", "React-Router-Dom", "Axios", "Programmeur", "Projet d'équipe", "Projet d'école"]
   
@@ -187,7 +187,7 @@ export const projets = {
 
         nom: "TIM Maisonneuve",
         description: "This project involves redesigning the website for the Maisonneuve Multimedia Integration Techniques (TIM) department using WordPress. My team and I took this project much further by using React for the front-end and WordPress' CMS for our back-end using their REST API. The project's challenges include using React and WordPress together, creating an application with multiple pages, introducing several small concepts like language change, theme change, automatically scrolling testimonials, or simply animations that improve navigation so that our users have the best experience and see TIM as the next step in their lives.",
-        img: memo,
+        img: timweb,
         lien: "https://shawnoboy.github.io/Projet-Web-2023/",
         tag: ["React", "WordPress", "React-Router-Dom", "Axios", "Programmer", "Team Project", "School Project"]
 

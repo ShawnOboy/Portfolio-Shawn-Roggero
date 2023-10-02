@@ -7,7 +7,8 @@
     --couleur-accent: #FF7B00;
     --couleur-fond: #e8e5e3;
     --couleur-texte: #0E0D0C;
-    /* Add other Clair theme styles here */
+
+    --border-img: 3px solid #db7a1f;
   }
   
   .theme-sombre {
@@ -16,8 +17,12 @@
     --couleur-accent: #FF7B00;
     --couleur-fond: #1C1917;
     --couleur-texte: #f3f2f1;
-    /* Add other Sombre theme styles here */
+    
+    --border-img: 2px solid #ffb56f;
   }
+  
+  --shadow-texte-titre: 0 0 4px black;
+  --shadow-texte-img: 0 0 16px black, 0 0 4px black;
 
   // Mesure
   --mesure-padding-petit: 1rem;
