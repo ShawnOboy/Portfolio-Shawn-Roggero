@@ -3,6 +3,7 @@ import '../sass/Footer.scss'
 import Resume from '../Resume_Roggero_Shawn.pdf';
 import { texts } from '../code/textes';
 import { Link } from 'react-router-dom';
+import { scrollUp } from './App';
 
 export default function Footer({langue}) {
   return (
@@ -38,18 +39,18 @@ export default function Footer({langue}) {
       </div>
       <div>
         <p>
-          <Link to={"/Portfolio-Shawn-Roggero/accueil"}>
+          <Link onClick={scrollUp} to={"/accueil"}>
             {texts[langue].footer.nav.accueil}
           </Link>
         </p>
         <p className='projets-footer'>
-          <Link to={"/Portfolio-Shawn-Roggero/projets/jeux"}>
+          <Link onClick={scrollUp} to={"/projets/jeux"}>
             {texts[langue].footer.nav.jeux}
           </Link>
-          <Link to={"/Portfolio-Shawn-Roggero/projets/web"}>
+          <Link onClick={scrollUp} to={"/projets/web"}>
             {texts[langue].footer.nav.web}
           </Link>
-          <Link to={"/Portfolio-Shawn-Roggero/projets/creation"}>
+          <Link onClick={scrollUp} to={"/projets/creation"}>
             {texts[langue].footer.nav.creation}
           </Link>
         </p>

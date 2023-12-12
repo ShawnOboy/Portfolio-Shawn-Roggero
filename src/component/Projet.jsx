@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import '../sass/Projet.scss';
 import { texts } from '../code/textes';
 
@@ -22,14 +22,35 @@ export default function Projet({ langue, filtre, lesProjets }) {
     ));
   };
 
+  const ImageLoader = ({ lowImg, highImg }) => {
+    const [imgSrc, setImgSrc] = useState(lowImg);
+  
+    useEffect(() => {
+      const img = new Image();
+      img.src = highImg;
+  
+      img.onload = () => {
+        setImgSrc(highImg);
+      };
+    }, [highImg]);
+  
+    return <img src={imgSrc} alt="Project" />;
+  };
+  
   const renderProjetSeul = () => {
     if (projetChoisi) {
-      const { nom, description, img, lien, tag } = projetChoisi;
+      const { nom, description, img, lowImg, lien, tag } = projetChoisi;
       return (
         <div className='Projet_seul'>
           <section>
-            <button className='fermer_projet' onClick={() => setProjetChoisi(null)}><strong>X</strong></button>
-            <div className='img_projet' style={{ backgroundImage: `url(${img})` }}></div>
+            <button className='fermer_projet' onClick={() => setProjetChoisi(null)}>
+              <strong>X</strong>
+            </button>
+            <div className='img_projet'>
+              <Suspense>
+                <ImageLoader lowImg={lowImg} highImg={img} />
+              </Suspense>
+            </div>
           </section>
           <section>
             <h1>{nom}</h1>

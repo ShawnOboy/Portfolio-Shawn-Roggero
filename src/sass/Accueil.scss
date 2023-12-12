@@ -1,5 +1,5 @@
 .Accueil {
-
+  
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -9,6 +9,7 @@
 
     font-size: 4rem;
     text-shadow: var(--shadow-texte-titre);
+    text-align: center;
 
   }
 

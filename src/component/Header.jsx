@@ -4,6 +4,7 @@ import '../sass/Header.scss'
 import { Link } from "react-router-dom";
 import { texts } from '../code/textes';
 import { logos } from '../code/logo';
+import { scrollUp } from './App';
 
 export default function Header({theme, setTheme, langue, setLangue}) {
 
@@ -24,7 +25,7 @@ export default function Header({theme, setTheme, langue, setLangue}) {
           label={texts[langue].header.theme + texts[langue].header[theme]}
         />
       </FormGroup>
-      <Link to={"/Portfolio-Shawn-Roggero/accueil"} className='logo'>
+      <Link onClick={scrollUp} to={"/accueil"} className='logo'>
         <img src={logos[theme]} alt={texts[langue].header.logo} />
       </Link>
       <FormGroup>

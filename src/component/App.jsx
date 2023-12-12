@@ -9,8 +9,16 @@ import Page_404 from './Page_404';
 import A_Propos from './A_Propos';
 import Projets from './Projets';
 import Projet from './Projet';
+import TitrePage from './TitrePage';
 import { useEffect, useState } from 'react';
 import { projets } from '../code/projets';
+
+export const scrollUp = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "instant",
+  });
+};
 
 export default function App() {
 
@@ -21,7 +29,7 @@ export default function App() {
       return themeSauvegarde;
     }
     else {
-      return "clair";
+      return "sombre";
     }
   });
 
@@ -55,18 +63,19 @@ export default function App() {
     <div className="App">
 
       <Header theme={theme} setTheme={setTheme} langue={langue} setLangue={setLangue} />
-
+      <TitrePage langue={langue}/>
+      
       <Routes>
-        <Route exact path='/Portfolio-Shawn-Roggero/' element={< Accueil langue={langue} />} ></Route> {/*Page par défaut*/}
-        <Route exact path="/Portfolio-Shawn-Roggero/accueil" element={< Accueil langue={langue} />} ></Route> {/*Page d'accueil*/}
+        <Route exact path='/' element={< Accueil langue={langue} />} ></Route> {/*Page par défaut*/}
+        <Route exact path="/accueil" element={< Accueil langue={langue} />} ></Route> {/*Page d'accueil*/}
 
-        <Route exact path="/Portfolio-Shawn-Roggero/a-propos" element={< A_Propos langue={langue} />} ></Route> {/*Page à propos de moi*/}
+        <Route exact path="/a-propos" element={< A_Propos langue={langue} />} ></Route> {/*Page à propos de moi*/}
 
-        <Route exact path="/Portfolio-Shawn-Roggero/projets" element={< Projets langue={langue} />} ></Route> {/*Page de projets*/}
+        <Route exact path="/projets" element={< Projets langue={langue} />} ></Route> {/*Page de projets*/}
 
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/jeux" element={< Projet langue={langue} filtre={"jeux"} lesProjets={lesProjets} />} ></Route> {/*Page de projets jeux*/}
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/web" element={< Projet langue={langue} filtre={"web"} lesProjets={lesProjets} />} ></Route> {/*Page de projets web*/}
-        <Route exact path="/Portfolio-Shawn-Roggero/projets/creation" element={< Projet langue={langue} filtre={"creation"} lesProjets={lesProjets} />} ></Route> {/*Page de projets creation*/}
+        <Route exact path="/projets/jeux" element={< Projet langue={langue} filtre={"jeux"} lesProjets={lesProjets} />} ></Route> {/*Page de projets jeux*/}
+        <Route exact path="/projets/web" element={< Projet langue={langue} filtre={"web"} lesProjets={lesProjets} />} ></Route> {/*Page de projets web*/}
+        <Route exact path="/projets/creation" element={< Projet langue={langue} filtre={"creation"} lesProjets={lesProjets} />} ></Route> {/*Page de projets creation*/}
 
         <Route path='*' element={< Page_404 langue={langue} />} ></Route>
       </Routes>
