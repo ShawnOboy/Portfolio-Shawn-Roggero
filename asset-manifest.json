@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/Portfolio-Shawn-Roggero/static/css/main.f0e72e4d.css",
-    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.029a64cf.js",
+    "main.js": "/Portfolio-Shawn-Roggero/static/js/main.a7851652.js",
     "static/media/misaryes.png": "/Portfolio-Shawn-Roggero/static/media/misaryes.d10889de7094eb8bb976.png",
     "static/media/vehicule.png": "/Portfolio-Shawn-Roggero/static/media/vehicule.09237673777d3b328f72.png",
+    "static/media/culttuerie.png": "/Portfolio-Shawn-Roggero/static/media/culttuerie.eac3e7c0ad069476bf93.png",
     "static/media/equanimity.png": "/Portfolio-Shawn-Roggero/static/media/equanimity.d9688f25b150acad3fb6.png",
     "static/media/section_projets_creation.png": "/Portfolio-Shawn-Roggero/static/media/section_projets_creation.80114ee49fdae539f6f5.png",
     "static/media/TIM_Web.png": "/Portfolio-Shawn-Roggero/static/media/TIM_Web.66b183515ea9b8f1ac7c.png",
@@ -14,15 +15,15 @@
     "static/media/myosotis.png": "/Portfolio-Shawn-Roggero/static/media/myosotis.bf15b20217fc4460a6f7.png",
     "static/media/dashout.png": "/Portfolio-Shawn-Roggero/static/media/dashout.5e4e5b7be84964b57cd6.png",
     "static/media/talisman.png": "/Portfolio-Shawn-Roggero/static/media/talisman.db4c5b97445913ec1fcc.png",
-    "static/media/Resume_Roggero_Shawn.pdf": "/Portfolio-Shawn-Roggero/static/media/Resume_Roggero_Shawn.fbc1cb959872478fe5cd.pdf",
+    "static/media/Resume_Roggero_Shawn.pdf": "/Portfolio-Shawn-Roggero/static/media/Resume_Roggero_Shawn.8450cdd412e4a6cf0cb8.pdf",
     "static/media/logo_portfolio_clair.png": "/Portfolio-Shawn-Roggero/static/media/logo_portfolio_clair.a8dcffd128bec77fe31e.png",
     "static/media/logo_portfolio_sombre.png": "/Portfolio-Shawn-Roggero/static/media/logo_portfolio_sombre.1c317bca114084104e79.png",
     "index.html": "/Portfolio-Shawn-Roggero/index.html",
     "main.f0e72e4d.css.map": "/Portfolio-Shawn-Roggero/static/css/main.f0e72e4d.css.map",
-    "main.029a64cf.js.map": "/Portfolio-Shawn-Roggero/static/js/main.029a64cf.js.map"
+    "main.a7851652.js.map": "/Portfolio-Shawn-Roggero/static/js/main.a7851652.js.map"
   },
   "entrypoints": [
     "static/css/main.f0e72e4d.css",
-    "static/js/main.029a64cf.js"
+    "static/js/main.a7851652.js"
   ]
 }
