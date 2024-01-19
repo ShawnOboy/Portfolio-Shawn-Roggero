@@ -44,13 +44,13 @@ export default function Footer({langue}) {
           </Link>
         </p>
         <p className='projets-footer'>
-          <Link onClick={scrollUp} to={"/projets/jeux"}>
+          <Link onClick={scrollUp} to={"/jeux"}>
             {texts[langue].footer.nav.jeux}
           </Link>
-          <Link onClick={scrollUp} to={"/projets/web"}>
+          <Link onClick={scrollUp} to={"/web"}>
             {texts[langue].footer.nav.web}
           </Link>
-          <Link onClick={scrollUp} to={"/projets/creation"}>
+          <Link onClick={scrollUp} to={"/creation"}>
             {texts[langue].footer.nav.creation}
           </Link>
         </p>

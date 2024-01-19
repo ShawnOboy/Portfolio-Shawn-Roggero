@@ -34,7 +34,7 @@ export default function Projet({ langue, filtre, lesProjets }) {
       };
     }, [highImg]);
   
-    return <img src={imgSrc} alt="Project" />;
+    return <div className='img_projet' style={{ backgroundImage: `url(${imgSrc})` }}></div>;
   };
   
   const renderProjetSeul = () => {

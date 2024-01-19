@@ -8,15 +8,15 @@ export default function Projets({langue}) {
 
   return (
     <div className='Projets'>
-      <Link onClick={scrollUp} to={"/projets/jeux"} className="projets-jeux">
+      <Link onClick={scrollUp} to={"/jeux"} className="projets-jeux">
         <h1>{texts[langue].projets.jeux}</h1>
       </Link>
 
-      <Link onClick={scrollUp} to={"/projets/web"} className="projets-web">
+      <Link onClick={scrollUp} to={"/web"} className="projets-web">
         <h1>{texts[langue].projets.web}</h1>
       </Link>
 
-      <Link onClick={scrollUp} to={"/projets/creation"} className="projets-creation">
+      <Link onClick={scrollUp} to={"/creation"} className="projets-creation">
         <h1>{texts[langue].projets.creation}</h1>
       </Link>
     </div>

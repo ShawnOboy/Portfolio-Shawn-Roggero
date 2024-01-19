@@ -1,10 +1,12 @@
 // Jeux
+import culttuerie from '../img/culttuerie.png'
 import misaryes from '../img/misaryes.png'
 import myosotis from '../img/myosotis.png'
 import aregon from '../img/aregon.png'
 import equanimity from '../img/equanimity.png'
 import dashout from '../img/dashout.png'
 
+import low_culttuerie from '../img/Low Quality/culttuerie.png'
 import low_misaryes from '../img/Low Quality/misaryes.png'
 import low_myosotis from '../img/Low Quality/myosotis.png'
 import low_aregon from '../img/Low Quality/aregon.png'
@@ -79,6 +81,16 @@ export const projets = {
         lowImg: low_misaryes,
         lien: "https://shawnoboy.itch.io/misaryes-subnebula",
         tag: ["Unity 3D", "Monde Ouvert", "URP", "Programmeur", "Projet d'équipe", "Projet d'école"]
+  
+      },
+      projet6: {
+  
+        nom: "Cult-Tuerie",
+        description: "Jeu fait pendant la 7e édition du Game Jam Intercollégiale de Valleyfield en 40h sur la thématique du Culte. Un simple jeu de tir où le joueur tue des ennemis du culte et récupère des 'Scraps' qui lui serviront par la suite d'améliorer ses stats et de survivre plus longtemps.",
+        img: culttuerie,
+        lowImg: low_culttuerie,
+        lien: "https://shawnoboy.itch.io/cult-tuerie",
+        tag: ["Unity 3D", "Game Jam", "Programmeur", "Projet d'équipe", "Game Design"]
   
       }
   
@@ -193,6 +205,16 @@ export const projets = {
         lien: "https://shawnoboy.itch.io/misaryes-subnebula",
         tag: ["Unity 3D", "Open World", "URP", "Programmer", "Team Project", "School Project"]
         
+      },
+      projet6: {
+  
+        nom: "Cult-Tuerie",
+        description: "Game created during the 7th edition of the Intercollegiate Valleyfield Game Jam in 40 hours, with the theme of the Cult. A simple shooting game where the player kills cult enemies and collects 'Scraps' that will later be used to improve their stats and survive longer.",
+        img: culttuerie,
+        lowImg: low_culttuerie,
+        lien: "https://shawnoboy.itch.io/cult-tuerie",
+        tag: ["Unity 3D", "Game Jam", "Programmer", "Team Project", "Game Design"]
+  
       }
 
     },

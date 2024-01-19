@@ -16,19 +16,13 @@ export default function TitrePage({ langue }) {
       case '/accueil':
         nouveauTitre = langue == "fr" ? 'Portfolio' + titre: 'Portfolio' + titre;
         break;
-      case '/a-propos':
-        nouveauTitre = langue == "fr" ? 'À Propos' + titre: 'About' + titre;
-        break;
-      case '/projets':
-        nouveauTitre = langue == "fr" ? 'Projets' + titre: 'Projects' + titre;
-        break;
-      case '/projets/jeux':
+      case '/jeux':
         nouveauTitre = langue == "fr" ? 'Mes Jeux' + titre: 'My Games' + titre;
         break;
-      case '/projets/web':
+      case '/web':
         nouveauTitre = langue == "fr" ? 'Mes Sites Web' + titre: 'My Websites' + titre;
         break;
-      case '/projets/creation':
+      case '/creation':
         nouveauTitre = langue == "fr" ? 'Mes Créations' + titre: 'My Creations' + titre;
         break;
       default:
