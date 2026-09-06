@@ -4,15 +4,15 @@
   padding: 0;
 
   box-sizing: border-box;
-  font-family: var(--police-text);
+  font-family: var(--font-text);
 
 
 }
 
 body, html {
 
-  color: var(--couleur-texte);
-  background-color: var(--couleur-fond);
+  color: var(--color-text);
+  background-color: var(--color-surface);
 
   overflow-x: hidden;
 
@@ -21,11 +21,11 @@ body, html {
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--couleur-principale); 
+    background: var(--color-primary); 
   }
    
   ::-webkit-scrollbar-thumb {
-    background: var(--couleur-accent); 
+    background: var(--color-accent); 
   }
   
   ::-webkit-scrollbar-thumb:hover {
@@ -41,7 +41,7 @@ li {
   a {
 
     text-decoration: none;
-    color: var(--couleur-texte);
+    color: var(--color-text);
 
   }
 
@@ -49,9 +49,137 @@ li {
 
 h1 {
 
-  font-family: var(--police-header);
-  padding: var(--mesure-padding-titre);
-  color: var(--couleur-accent);
+  font-family: var(--font-header);
+  padding: var(--space-4);
+  color: var(--color-accent);
   text-shadow: var(--shadow-texte-img);
 
+}
+
+.btn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn__shape {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2.75rem 0.8rem 1.15rem;
+  white-space: nowrap;
+}
+
+/* Shared timing */
+.btn::before,
+.btn::after {
+  transition: all 1s ease;
+}
+
+/* Default trapezoid: full fill by default, split into borders on hover */
+.btn--trapezoid {
+  color: var(--color-bg);
+}
+
+.btn--trapezoid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 60%, transparent)
+  );
+  box-shadow: var(--shadow-image);
+  z-index: 1;
+}
+
+.btn--trapezoid::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-accent) 85%, transparent),
+    var(--color-accent)
+  );
+  box-shadow: var(--shadow-image);
+  z-index: 1;
+}
+
+.btn--trapezoid:hover {
+  color: var(--color-text);
+}
+
+.btn--trapezoid:hover::before {
+  height: 2px;
+  top: 0;
+}
+
+.btn--trapezoid:hover::after {
+  height: 2px;
+}
+
+/* Ghost trapezoid: outline with border and underline animation */
+.btn--ghost-trapezoid {
+  color: var(--color-text);
+}
+
+.btn--ghost-trapezoid::before,
+.btn--ghost-trapezoid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.btn--ghost-trapezoid::before {
+  background: var(--color-border);
+}
+
+.btn--ghost-trapezoid::after {
+  inset: 2px;
+  background: var(--color-surface);
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+}
+
+.btn--ghost-trapezoid .btn__shape::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.45rem;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 60%, transparent)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+  z-index: 4;
+}
+
+.btn--ghost-trapezoid:hover .btn__shape::after {
+  transform: scaleX(1);
 }

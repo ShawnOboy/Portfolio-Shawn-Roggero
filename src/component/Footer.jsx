@@ -1,62 +1,37 @@
 import '../sass/Footer.scss'
 
 import Resume from '../Resume_Roggero_Shawn.pdf';
-import { texts } from '../code/textes';
-import { Link } from 'react-router-dom';
-import { scrollUp } from './App';
+import { texts } from '../code/texts';
 
-export default function Footer({langue}) {
+export default function Footer({lang}) {
   return (
     <div className='Footer'>
       <div>
         <p>
           <a target='_blank' href="mailto: shawnroggero+professionnel@hotmail.com">
-            {texts[langue].footer.infos.email}
+            {texts.contactInfos.email}
           </a>
         </p>
         <p>
           <a target='_blank' href="tel:5143482065">
-            {texts[langue].footer.infos.phone}
+            {texts.contactInfos.phone}
           </a>
         </p>
       </div>
       <div>
         <p>
           <a target='_blank' href="https://www.linkedin.com/in/shawn-roggero-b37374262/">
-            {texts[langue].footer.lien.linkedin}
+            {texts.socialLinks.linkedin}
           </a>
         </p>
         <p>
           <a target='_blank' href="https://github.com/ShawnOboy">
-            {texts[langue].footer.lien.github}
+            {texts.socialLinks.github}
           </a>
         </p>
         <p>
-          <a target='_blank' href="https://www.youtube.com/channel/UC2Z_VKlA475KE9HKUQftTGQ">
-            {texts[langue].footer.lien.youtube}
-          </a>
-        </p>
-      </div>
-      <div>
-        <p>
-          <Link onClick={scrollUp} to={"/accueil"}>
-            {texts[langue].footer.nav.accueil}
-          </Link>
-        </p>
-        <p className='projets-footer'>
-          <Link onClick={scrollUp} to={"/jeux"}>
-            {texts[langue].footer.nav.jeux}
-          </Link>
-          <Link onClick={scrollUp} to={"/web"}>
-            {texts[langue].footer.nav.web}
-          </Link>
-          <Link onClick={scrollUp} to={"/creation"}>
-            {texts[langue].footer.nav.creation}
-          </Link>
-        </p>
-        <p>
-          <a target='_blank' href={Resume}>
-            {texts[langue].footer.nav.cv}
+          <a target='_blank' href="https://shawnoboy.itch.io/">
+            {texts.socialLinks.itch}
           </a>
         </p>
       </div>

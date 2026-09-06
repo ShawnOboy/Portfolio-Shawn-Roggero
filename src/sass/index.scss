@@ -1,49 +1,52 @@
 :root {
 
-  // Couleur
-  .theme-clair {
-    --couleur-principale: #adad9f;
-    --couleur-secondaire: #d8dbde;
-    --couleur-accent: #FF7B00;
-    --couleur-fond: #e8e5e3;
-    --couleur-texte: #0E0D0C;
+  // Colors
+  .theme-light {
+    --color-bg: #e8e5e3;
+    --color-surface: #d8dbde;
+    --color-surface-2: #adad9f;
+    --color-accent: #ff7b00;
+    --color-text: #0e0d0c;
+    --color-border: #db7a1f;
+    --color-border-strong: #ff7b00;
+  }
 
-    --border-img: 3px solid #db7a1f;
+  .theme-dark {
+    --color-bg: #1c1917;
+    --color-surface: #212427;
+    --color-surface-2: #606052;
+    --color-accent: #ff7b00;
+    --color-text: #f3f2f1;
+    --color-border: #ffb56f;
+    --color-border-strong: #ff7b00;
   }
   
-  .theme-sombre {
-    --couleur-principale: #606052;
-    --couleur-secondaire: #212427;
-    --couleur-accent: #FF7B00;
-    --couleur-fond: #1C1917;
-    --couleur-texte: #f3f2f1;
-    
-    --border-img: 2px solid #ffb56f;
-  }
-  
-  --shadow-texte-titre: 0 0 4px black;
-  --shadow-texte-img: 0 0 16px black, 0 0 4px black;
+  --shadow-title: 0 0 4px black;
+  --shadow-image: 0 0 16px black, 0 0 4px black;
 
-  // Mesure
-  --mesure-padding-petit: 1rem;
-  --mesure-padding-texte: 2rem;
-  --mesure-padding-titre: 3rem;
+  // Spacing
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
 
-  // Taille de caractère
-  --taille-mobile-petit: 12px;
-  --taille-tablette-petit: 12px;
-  --taille-bureau-petit: 1.25rem;
+  // Cards and pills
+  --radius-card: 1rem;
+  --radius-pill: 999px;
 
-  --taille-mobile-moyen: 12px;
-  --taille-tablette-moyen: 12px;
-  --taille-bureau-moyen: 1.75rem;
+  --card-width: min(42rem, 100%);
+  --card-padding: clamp(1rem, 2vw, 1.75rem);
+  --card-gap: 1rem;
 
-  --taille-mobile-grand: 12px;
-  --taille-tablette-grand: 12px;
-  --taille-bureau-grand: 2.25rem;
+  // Fonts
+  --font-header: "Orbitron", monospace;
+  --font-text: "Didact Gothic", monospace;
 
-  // Police
-  --police-header: "Orbitron", monospace;
-  --police-text: "Didact Gothic", monospace;
+  // Font sizes
+  --text-small: clamp(0.9rem, 1vw, 1rem);
+  --text-base: clamp(1rem, 1.2vw, 1.15rem);
+  --text-large: clamp(1.4rem, 2vw, 2rem);
+  --text-header: clamp(2rem, 4vw, 4rem);
 
 }

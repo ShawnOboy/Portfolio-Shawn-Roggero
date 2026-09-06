@@ -1,83 +1,96 @@
-import { Route, Routes} from 'react-router-dom';
-
+import { Route, Routes } from 'react-router-dom';
 import '../sass/App.scss';
 
-import Accueil from './Accueil';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
+import HomePage from './HomePage';
 import Page_404 from './Page_404';
-import A_Propos from './A_Propos';
-import Projets from './Projets';
-import Projet from './Projet';
-import TitrePage from './TitrePage';
+import SingleProject from './SingleProject';
+import TitlePage from './TitlePage';
 import { useEffect, useState } from 'react';
-import { projets } from '../code/projets';
 
-export const scrollUp = () => {
+
+// ----- Exported scroll to top functions -----
+export const scrollUpSmooth = () => {
   window.scrollTo({
     top: 0,
-    behavior: "instant",
+    behavior: 'smooth',
   });
 };
 
+export const scrollUpInstant = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'instant',
+  });
+};
+
+// ----- Default export for App -----
+
 export default function App() {
 
+  // ----- State for theme and language -----
+
+  // Theme
   const [theme, setTheme] = useState(() => {
-    const themeSauvegarde = localStorage.getItem('theme-sr');
+    const savedTheme = localStorage.getItem('theme-sr');
 
-    if(themeSauvegarde === "clair" || themeSauvegarde === "sombre") {
-      return themeSauvegarde;
+    if(savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
     }
     else {
-      return "sombre";
+      return "dark";
     }
   });
 
-  const [langue, setLangue] = useState(() => {
-    const langueSauvegarde = localStorage.getItem('langue-sr');
+  // Language
+  const [lang, setLang] = useState(() => {
+    const savedLang = localStorage.getItem('lang-sr');
 
-    if(langueSauvegarde === "fr" || langueSauvegarde === "en") {
-      return langueSauvegarde;
+    if(savedLang === "fr" || savedLang === "en") {
+      return savedLang;
     }
     else {
-      return "fr";
+      return "en";
     }
   });
 
-  const [lesProjets, setLesProjets] = useState(null);
 
-  useEffect(() => {
-    setLesProjets(projets[langue])
-  }, [langue]);
+  // ----- UseEffects for theme and language -----
 
+  // Update localStorage and body class when theme changes
   useEffect(() => {
     localStorage.setItem('theme-sr', theme);
     document.body.className = `theme-${theme}`;
   }, [theme]);
-  
-  useEffect(() => {
-    localStorage.setItem('langue-sr', langue);
-  }, [langue]);
 
+  // Update localStorage when language changes
+  useEffect(() => {
+    localStorage.setItem('lang-sr', lang);
+  }, [lang]);
+
+
+  // ----- JSX for App -----
   return (
     <div className="App">
+      {/* ----- Header and Title (These will be displayed on all pages) ----- */}
+      <Header theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
+      <TitlePage lang={lang} />
 
-      <Header theme={theme} setTheme={setTheme} langue={langue} setLangue={setLangue} />
-      <TitrePage langue={langue}/>
-
+      {/* ----- Routes for different pages ----- */}
       <Routes>
-        <Route exact path="/" element={< Accueil langue={langue} />} ></Route> {/*Page par défaut*/}
-        <Route exact path="/accueil" element={< Accueil langue={langue} />} ></Route> {/*Page d'accueil*/}
+        <Route path="/" element={<HomePage lang={lang} />} />
+        <Route path="/home" element={<HomePage lang={lang} />} />
 
-        <Route exact path="/jeux" element={< Projet langue={langue} filtre={"jeux"} lesProjets={lesProjets} />} ></Route> {/*Page de projets jeux*/}
-        <Route exact path="/web" element={< Projet langue={langue} filtre={"web"} lesProjets={lesProjets} />} ></Route> {/*Page de projets web*/}
-        <Route exact path="/creation" element={< Projet langue={langue} filtre={"creation"} lesProjets={lesProjets} />} ></Route> {/*Page de projets creation*/}
+        {/* future detail route */}
+        <Route path="/projects/:slug" element={<SingleProject lang={lang} />} />
 
-        <Route path="*" element={< Page_404 langue={langue} />} ></Route>
+        {/* Page 404 Route */}
+        <Route path="*" element={<Page_404 lang={lang} />} />
       </Routes>
 
-      <Footer langue={langue} />
-
+      {/* ----- Footer (This will be displayed on all pages) ----- */}
+      <Footer lang={lang} />
     </div>
   );
 }
