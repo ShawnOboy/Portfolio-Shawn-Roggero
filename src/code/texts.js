@@ -120,17 +120,6 @@
 
 export const texts = {
   en: {
-    home: {
-      heroTitle: "Shawn Roggero",
-      heroSubtitle: "Game Programmer — Gameplay · Tools · Procedural",
-      projectsButton: "Projects",
-      projectsSection: "Featured Projects",
-      projectsSectionListTitle: "All Projects",
-      cv: "View my Resume",
-      downloadCv: "Download",
-      aboutSection: "About Me"
-    },
-
     header: {
       logo: "Portfolio's Logo",
       theme: "Theme: ",
@@ -139,73 +128,208 @@ export const texts = {
       dark: "Dark",
       en: "English"
     },
-
-    about: {
+    heroSection: {
+      heroTitle: "Shawn Roggero",
+      heroSubtitle: "Tool & Gameplay Programmer | Procedural Generation",
+      projectsButton: "Projects",
+      cv: "View my Resume",
+      downloadCv: "Download my Resume"
+    },
+    aboutSection: {
+      aboutTitle: "About Me",
       currentState: [
-        { text: "Finish my college studies in Multimedia Integration Technique (TIM) at Maisonneuve College.", done: true },
-        { text: "Finish my university studies in game programming.", done: false },
-        { text: "Gain experience in the game industry as a programmer.", done: false }
+        { text: "Completed my college studies in Multimedia Integration (TIM), now studying game programming at university.", done: true },
+        { text: "Looking for a tools programming internship to explore the role further and learn from experienced programmers.", done: false },
+        { text: "Always eager to learn, share ideas and collaborate on projects that are a little out of the ordinary.", done: true }
       ],
       goals: [
-        { text: "Work on gameplay systems, tools and procedural generation.", done: false },
-        { text: "Ship polished prototypes and learn industry workflows.", done: false },
-        { text: "Contribute to team tools and optimization.", done: false }
+        { text: "Love designing procedural systems, and especially building the tools that allow others to use them.", done: false },
+        { text: "Want to keep developing my skills through ambitious projects and new technical challenges.", done: true },
+        { text: "Want to contribute to tools that make developers' work simpler, more efficient and more enjoyable.", done: false }
       ],
       enjoyments: [
-        { text: "Gameplay programming and systems design.", done: false },
-        { text: "Procedural content and algorithmic solutions.", done: false },
-        { text: "Performance tuning and gameplay feel.", done: false }
+        { text: "Big fan of electronic music: melodic, dubstep, color bass, future riddim and way too many other subgenres.", done: true },
+        { text: "Always up for staying active: climbing, parkour, golf... and interested in urbex.", done: false },
+        { text: "Rogue-lite, survival and extraction shooter player... basically a bit of a loot goblin.", done: true }
       ]
     },
+    projectSection: {
+      featuredTitle: "Featured Projects",
+      allProjectsTitle: "All Projects",
 
-    project: {
-      linkLabel: "Open project",
-      highlightsTitle: "Highlights"
+      sortingText: {
+        sort: "Sort",
+        sortOptions: [
+          "Date: new to old",
+          "Date: old to new",
+          "Name: A to Z",
+          "Name: Z to A"
+        ],
+
+        engine: "Engine",
+        engineOptions: [
+          "All",
+          "Unity Engine",
+          "Unreal Engine",
+          "JavaScript"
+        ],
+
+        dimension: "Dimension",
+        dimensionOptions: [
+          "All",
+          "2D",
+          "3D"
+        ],
+
+        type: "Type",
+        typeOptions: [
+          "All",
+          "School project",
+          "Game jam",
+          "Team project",
+          "Tool"
+        ]
+      },
+
+      showMoreButton: "Show more",
+    },
+    singleProjectSection: {
+      backButton: "Back to projects",
+      highlightsTitle: "Highlights",
+      description: "Description",
+      readMoreButton: "Read more",
+      readLessButton: "Read less",
+      linksTitle: "Check out more",
+      metaTitle: [
+        "Hide Meta",
+        "Show Meta"
+      ],
+      meta: {
+        engine: "Engine",
+        dimension: "Dimension",
+        role: "Role",
+        teamSize: "Team size",
+        year: "Year",
+        type: "Type",
+        highlights: "Meta Highlights"
+      },
+      screenshotsTitle: "Project images",
+      screenshots: [
+        "Show less images",
+        "Show all images"
+      ]
+    },
+    footer: {
+      reachOut: "Reach out",
+      socialLinks: "Social links",
+      copyright: "© 2026 Shawn Roggero. All rights reserved."
     }
   },
 
   fr: {
-    home: {
-      heroTitle: "Shawn Roggero",
-      heroSubtitle: "Programmeur de jeux — Gameplay · Outils · Procédural",
-      projectsButton: "Projets",
-      projectsSection: "Projets en vedette",
-      projectsSectionListTitle: "Tous les projets",
-      cv: "Voir mon CV",
-      downloadCv: "Télécharger",
-      aboutSection: "À propos de moi"
-    },
-
     header: {
-      logo: "Logo Portfolio",
+      logo: "Logo du Portfolio",
       theme: "Thème: ",
       lang: "Langue: ",
       light: "Clair",
       dark: "Sombre",
       fr: "Français"
     },
-
-    about: {
+    heroSection: {
+      heroTitle: "Shawn Roggero",
+      heroSubtitle: "Programmeur Tool & Gameplay | Génération procédurale",
+      projectsButton: "Projets",
+      cv: "Voir mon CV",
+      downloadCv: "Télécharger mon CV"
+    },
+    aboutSection: {
+      aboutTitle: "À Propos",
       currentState: [
-        { text: "Terminer mes études collégiales en Technique d'Intégration Multimédia (TIM).", done: true },
-        { text: "Terminer mes études universitaires en programmation de jeux.", done: false },
-        { text: "Gagner de l'expérience dans l'industrie du jeu en tant que programmeur.", done: false }
+        { text: "Études collégiales en Technique d'Intégration Multimédia (TIM) terminées, maintenant à l'université en programmation de jeux.", done: true },
+        { text: "À la recherche d'un stage en programmation d'outils pour découvrir davantage ce rôle et apprendre auprès de programmeurs expérimentés.", done: false },
+        { text: "Toujours partant pour apprendre, partager des idées et collaborer sur des projets qui sortent un peu de l'ordinaire.", done: true }
       ],
       goals: [
-        { text: "Travailler sur des systèmes de gameplay, outils et génération procédurale.", done: false },
-        { text: "Publier des prototypes soignés et apprendre les workflows pro.", done: false },
-        { text: "Contribuer aux outils d'équipe et à l'optimisation.", done: false }
+        { text: "Adore concevoir des systèmes procéduraux et surtout créer les outils qui permettent aux autres de les utiliser.", done: false },
+        { text: "Souhaite continuer à développer ses compétences à travers des projets ambitieux et de nouveaux défis techniques.", done: true },
+        { text: "Veut contribuer à des outils qui rendent le travail des développeurs plus simple, efficace et agréable.", done: false }
       ],
       enjoyments: [
-        { text: "Programmation de gameplay et conception de systèmes.", done: false },
-        { text: "Génération procédurale et solutions algorithmiques.", done: false },
-        { text: "Optimisation et sensations de jeu.", done: false }
+        { text: "Grand amateur de musique électronique: mélodique, dubstep, color bass, future riddim et beaucoup trop d'autres sous-genres.", done: true },
+        { text: "Toujours partant pour bouger: escalade, parkour, golf... et interessé par l'urbex", done: false },
+        { text: "Joueur de rogue-lites, jeux de survie et extraction shooters... un peu comme un loot goblin.", done: true }
       ]
     },
+    projectSection: {
+      featuredTitle: "Projets en vedette",
+      allProjectsTitle: "Tous les projets",
 
-    project: {
-      linkLabel: "Ouvrir le projet",
-      highlightsTitle: "Points forts"
+      sortingText: {
+        sort: "Trier",
+        sortOptions: [
+          "Date: du plus récent",
+          "Date: du plus ancien",
+          "Nom: A à Z",
+          "Nom: Z à A"
+        ],
+
+        engine: "Moteur de jeu",
+        engineOptions: [
+          "Tous",
+          "Unity Engine",
+          "Unreal Engine",
+          "JavaScript"
+        ],
+
+        dimension: "Dimension",
+        dimensionOptions: [
+          "Tous",
+          "2D",
+          "3D"
+        ],
+
+        type: "Type",
+        typeOptions: [
+          "Tous",
+          "Projet scolaire",
+          "Game jam",
+          "Projet d'équipe",
+          "Outil"
+        ]
+      },
+
+      showMoreButton: "Voir plus",
+    },
+    singleProjectSection: {
+      backButton: "Retour aux projets",
+      highlightsTitle: "Points forts",
+      description: "Description",
+      readMoreButton: "Lire plus",
+      readLessButton: "Lire moins",
+      linksTitle: "Aller voir plus",
+      metaTitle: [
+        "Cacher Méta",
+        "Voir Méta"
+      ],
+      meta: {
+        engine: "Moteur de jeu",
+        dimension: "Dimension",
+        role: "Rôle",
+        teamSize: "Taille de l'équipe",
+        year: "Année",
+        type: "Type",
+        highlights: "Points forts méta"
+      },
+      screenshotsTitle: "Images du projet",
+      screenshots: [
+        "Voir moins d'images",
+        "Voir tous les images"
+      ]
+    },
+    footer: {
+      reachOut: "Me joindre",
+      socialLinks: "Réseaux sociaux",
+      copyright: "© 2026 Shawn Roggero. Tous droits réservés."
     }
   },
 

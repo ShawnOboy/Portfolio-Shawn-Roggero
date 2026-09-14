@@ -1,52 +1,259 @@
 :root {
 
-  // Colors
+  // ----- Colors -----
+
   .theme-light {
     --color-bg: #e8e5e3;
     --color-surface: #d8dbde;
     --color-surface-2: #adad9f;
+
     --color-accent: #ff7b00;
+
     --color-text: #0e0d0c;
-    --color-border: #db7a1f;
-    --color-border-strong: #ff7b00;
+    --color-text-muted: #5f5b57;
+
+    --color-border: #8f8a84;
+    --color-border-strong: #0e0d0c;
   }
 
   .theme-dark {
     --color-bg: #1c1917;
     --color-surface: #212427;
     --color-surface-2: #606052;
+
     --color-accent: #ff7b00;
+
     --color-text: #f3f2f1;
-    --color-border: #ffb56f;
-    --color-border-strong: #ff7b00;
+    --color-text-muted: #b9b5b1;
+
+    --color-border: #77716d;
+    --color-border-strong: #f3f2f1;
   }
-  
+
+
+  // ----- Shadows -----
+
   --shadow-title: 0 0 4px black;
   --shadow-image: 0 0 16px black, 0 0 4px black;
 
-  // Spacing
+
+  // ----- Spacing -----
+
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2rem;
   --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
 
-  // Cards and pills
-  --radius-card: 1rem;
-  --radius-pill: 999px;
 
-  --card-width: min(42rem, 100%);
-  --card-padding: clamp(1rem, 2vw, 1.75rem);
-  --card-gap: 1rem;
+  // ----- Layout -----
 
-  // Fonts
+  --page-width: 90rem;
+  --page-padding: clamp(1rem, 4vw, 4rem);
+
+  --section-gap: clamp(4rem, 8vw, 8rem);
+
+
+  // ----- Geometry -----
+
+  --cut-small: 1.25rem;
+  --cut-medium: 3rem;
+  --cut-large: clamp(5rem, 10vw, 10rem);
+
+  --border-width: 2px;
+
+
+  // ----- Fonts -----
+
   --font-header: "Orbitron", monospace;
-  --font-text: "Didact Gothic", monospace;
+  --font-text: "Didact Gothic", sans-serif;
 
-  // Font sizes
-  --text-small: clamp(0.9rem, 1vw, 1rem);
+
+  // ----- Font sizes -----
+
+  --text-small: clamp(0.85rem, 1vw, 1rem);
   --text-base: clamp(1rem, 1.2vw, 1.15rem);
-  --text-large: clamp(1.4rem, 2vw, 2rem);
-  --text-header: clamp(2rem, 4vw, 4rem);
+  --text-medium: clamp(1.2rem, 1.6vw, 1.5rem);
+  --text-large: clamp(1.6rem, 2.5vw, 2.5rem);
 
+  --text-section-title: clamp(2rem, 4vw, 4rem);
+  --text-hero-title: clamp(2.5rem, 6vw, 5rem);
+
+
+  // ----- Transitions -----
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+}
+
+
+// ----- Global Reset -----
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+// ----- Typography -----
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-header);
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+// ----- Common Page Layout -----
+
+main {
+  width: 100%;
+}
+
+.home-section {
+  width: min(
+    calc(100% - (var(--page-padding) * 2)),
+    var(--page-width)
+  );
+
+  margin-inline: auto;
+}
+
+
+// ----- Shared Angular Buttons -----
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 2.75rem;
+
+  border: none;
+  background: none;
+
+  font-family: var(--font-header);
+  font-size: var(--text-small);
+
+  cursor: pointer;
+
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn__shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.65rem 1.4rem;
+
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border-strong);
+
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut-small)) 0,
+    100% 100%,
+    var(--cut-small) 100%
+  );
+}
+
+.btn--trapezoid .btn__shape {
+  background-color: var(--color-accent);
+}
+
+.btn--ghost-trapezoid .btn__shape {
+  background-color: transparent;
+}
+
+
+// ----- Accessibility -----
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+
+// ----- Mobile -----
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 1rem;
+
+    --space-6: 3rem;
+    --space-7: 4rem;
+
+    --section-gap: 4rem;
+
+    --cut-medium: 2rem;
+    --cut-large: 3rem;
+  }
 }

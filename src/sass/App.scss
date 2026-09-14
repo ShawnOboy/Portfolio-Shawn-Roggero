@@ -1,185 +1,155 @@
 * {
-
   margin: 0;
   padding: 0;
 
   box-sizing: border-box;
   font-family: var(--font-text);
-
-
 }
 
-body, html {
 
+// ----- Page -----
+
+html,
+body {
   color: var(--color-text);
   background-color: var(--color-surface);
 
   overflow-x: hidden;
-
-  ::-webkit-scrollbar {
-    width: 0.75rem;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: var(--color-primary); 
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-accent); 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ff9f45; 
-  }
-
 }
 
-li {
 
+// ----- Scrollbar -----
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9f45;
+}
+
+
+// ----- Lists -----
+
+li {
   list-style-type: none;
 
   a {
-
-    text-decoration: none;
     color: var(--color-text);
-
+    text-decoration: none;
   }
-
 }
+
+
+// ----- Headers -----
 
 h1 {
-
-  font-family: var(--font-header);
   padding: var(--space-4);
+
   color: var(--color-accent);
+  font-family: var(--font-header);
   text-shadow: var(--shadow-texte-img);
-
 }
 
-.btn {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--color-text);
-  text-decoration: none;
-  cursor: pointer;
-  font: inherit;
-  isolation: isolate;
-  overflow: hidden;
-}
 
-.btn__shape {
-  position: relative;
-  z-index: 3;
+// ==================================================
+// Buttons
+// ==================================================
+
+.trapezoid-button {
+  --button-cut: 1rem;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 2.75rem 0.8rem 1.15rem;
-  white-space: nowrap;
-}
 
-/* Shared timing */
-.btn::before,
-.btn::after {
-  transition: all 1s ease;
-}
+  min-width: 9.5rem;
+  min-height: 3rem;
+  padding: 0.7rem 2rem;
 
-/* Default trapezoid: full fill by default, split into borders on hover */
-.btn--trapezoid {
-  color: var(--color-bg);
-}
+  border: 0;
 
-.btn--trapezoid::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-  background: linear-gradient(
-    90deg,
-    var(--color-accent),
-    color-mix(in srgb, var(--color-accent) 60%, transparent)
+  background: var(--color-accent);
+  color: var(--color-surface);
+
+  font: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  // Parallelogram shape
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--button-cut)) 0,
+    100% 100%,
+    var(--button-cut) 100%
   );
-  box-shadow: var(--shadow-image);
-  z-index: 1;
+
+  transition:
+    transform 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
 }
 
-.btn--trapezoid::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 0;
-  width: 100%;
-  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--color-accent) 85%, transparent),
-    var(--color-accent)
-  );
-  box-shadow: var(--shadow-image);
-  z-index: 1;
-}
 
-.btn--trapezoid:hover {
+// ----- Ghost Trapezoid -----
+
+.trapezoid-button--ghost {
+  padding: 2px;
+
+  background: var(--color-text);
   color: var(--color-text);
+
+  .trapezoid-button__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: calc(3rem - 4px);
+    padding: 0.7rem calc(2rem - 2px);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--button-cut)) 0,
+      100% 100%,
+      var(--button-cut) 100%
+    );
+
+    transition:
+      color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background: var(--color-accent);
+
+    .trapezoid-button__inner {
+      color: var(--color-accent);
+    }
+  }
 }
 
-.btn--trapezoid:hover::before {
-  height: 2px;
-  top: 0;
-}
-
-.btn--trapezoid:hover::after {
-  height: 2px;
-}
-
-/* Ghost trapezoid: outline with border and underline animation */
-.btn--ghost-trapezoid {
-  color: var(--color-text);
-}
-
-.btn--ghost-trapezoid::before,
-.btn--ghost-trapezoid::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-  z-index: 1;
-}
-
-.btn--ghost-trapezoid::before {
-  background: var(--color-border);
-}
-
-.btn--ghost-trapezoid::after {
-  inset: 2px;
-  background: var(--color-surface);
-  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-}
-
-.btn--ghost-trapezoid .btn__shape::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.45rem;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--color-accent),
-    color-mix(in srgb, var(--color-accent) 60%, transparent)
-  );
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1s ease;
-  z-index: 4;
-}
-
-.btn--ghost-trapezoid:hover .btn__shape::after {
-  transform: scaleX(1);
+.download-button {
+  min-width: 3rem;
 }

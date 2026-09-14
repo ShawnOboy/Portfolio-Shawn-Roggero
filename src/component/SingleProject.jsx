@@ -16,6 +16,7 @@ export default function SingleProject({ lang }) {
   const [showMoreDescription, setShowMoreDescription] = useState(false);
   const [showMoreScreenshots, setShowMoreScreenshots] = useState(false);
   const [showMeta, setShowMeta] = useState(false);
+
   const [imageSrc, setImageSrc] = useState(
     project?.images?.low || project?.images?.high
   );
@@ -37,7 +38,8 @@ export default function SingleProject({ lang }) {
     return <Page_404 lang={lang} variant="project" />;
   }
 
-  const projectTexts = texts[lang]?.project ?? texts.en.project;
+  const singleProjectTexts = texts[lang]?.singleProjectSection ?? texts.en.singleProjectSection;
+
   const description = Array.isArray(project.description)
     ? project.description
     : [project.description];
@@ -47,10 +49,13 @@ export default function SingleProject({ lang }) {
     : description.slice(0, 3);
 
   const screenshots = project.images?.screenshots ?? [];
-  const visibleScreenshots = showMoreScreenshots ? screenshots : screenshots.slice(0, 6);
+
+  const visibleScreenshots = showMoreScreenshots
+    ? screenshots
+    : screenshots.slice(0, 6);
 
   const renderTags = (tags = []) => {
-    return (tags ?? []).map((tag, index) => {
+    return tags.map((tag, index) => {
       const label = texts[lang]?.tags?.[tag] ?? tag;
 
       return (
@@ -67,7 +72,7 @@ export default function SingleProject({ lang }) {
         link.label?.[lang] ??
         link.label?.en ??
         link.displayedName ??
-        projectTexts.linkLabel;
+        singleProjectTexts.linksTitle;
 
       return (
         <a
@@ -75,7 +80,7 @@ export default function SingleProject({ lang }) {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="project-link trapezoid-button"
+          className="project-link"
         >
           {label}
         </a>
@@ -93,12 +98,18 @@ export default function SingleProject({ lang }) {
 
   return (
     <div className="SingleProject">
-      
-      <div className="project-footer">
-        <Link to="/home" className="back-link trapezoid-button">
-          Back to home
+
+      <div className="project-top-nav">
+        <Link to="/home" className="back-link trapezoid-button trapezoid-button--ghost">
+          <span className="trapezoid-button__inner">
+            {singleProjectTexts.backButton}
+          </span>
         </Link>
       </div>
+
+      <header className="project-heading">
+        <h1>{project.name}</h1>
+      </header>
 
       <section className="project-hero">
         <div className="banner-image">
@@ -110,46 +121,118 @@ export default function SingleProject({ lang }) {
         </div>
 
         <div className="project-highlights">
-          <h2>{projectTexts.highlightsTitle}</h2>
+          <h2>{singleProjectTexts.highlightsTitle}</h2>
+
           <ul>
             {(project.highlights ?? []).map((highlight, index) => (
-              <li key={`${highlight}-${index}`}>{highlight}</li>
+              <li key={`${highlight}-${index}`}>
+                {highlight}
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
       <section className="project-content">
+
         <div className="project-tags">
           {renderTags(project.tags?.[lang] ?? [])}
         </div>
 
-        <div className="project-description">
-          {visibleDescription.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+        <section className="project-description-section">
+          <h2>{singleProjectTexts.description}</h2>
 
-          {description.length > 3 && (
-            <button
-              type="button"
-              className="text-toggle trapezoid-button"
-              onClick={() => setShowMoreDescription((value) => !value)}
-            >
-              {showMoreDescription ? 'Read less' : 'Read more'}
-            </button>
-          )}
-        </div>
+          <div className="project-description">
+            {visibleDescription.map((paragraph, index) => (
+              <p key={index}>
+                {paragraph}
+              </p>
+            ))}
 
-        <div className="project-links-block">
-          <h2>Check out more</h2>
-          <div className="project-links">
-            {renderLinks(project.links)}
+            {description.length > 3 && (
+              <button
+                type="button"
+                className="text-toggle trapezoid-button"
+                onClick={() => setShowMoreDescription((value) => !value)}
+              >
+                {showMoreDescription
+                  ? singleProjectTexts.readLessButton
+                  : singleProjectTexts.readMoreButton}
+              </button>
+            )}
           </div>
-        </div>
+        </section>
+
+        {project.links?.length > 0 && (
+          <section className="project-links-block">
+            <h2>{singleProjectTexts.linksTitle}</h2>
+
+            <div className="project-links">
+              {renderLinks(project.links)}
+            </div>
+          </section>
+        )}
+
+        <section className="project-meta">
+          <button
+            type="button"
+            className="meta-toggle trapezoid-button trapezoid-button--ghost"
+            onClick={() => setShowMeta((value) => !value)}
+          >
+            <span className="trapezoid-button__inner">
+              {showMeta ? singleProjectTexts.metaTitle[0] : singleProjectTexts.metaTitle[1]}
+            </span>
+          </button>
+
+          {showMeta && (
+            <div className="meta-panel">
+              <p>
+                <strong>{singleProjectTexts.meta.engine}:</strong> {project.meta?.engine}
+              </p>
+
+              <p>
+                <strong>{singleProjectTexts.meta.dimension}:</strong> {project.meta?.dimension}
+              </p>
+
+              <p>
+                <strong>{singleProjectTexts.meta.role}:</strong>{' '}
+                {renderMetaValue(project.meta?.role)}
+              </p>
+
+              <p>
+                <strong>{singleProjectTexts.meta.teamSize}:</strong>{' '}
+                {project.meta?.teamSize}
+              </p>
+
+              <p>
+                <strong>{singleProjectTexts.meta.year}:</strong> {project.meta?.year}
+              </p>
+
+              <p>
+                <strong>{singleProjectTexts.meta.type}:</strong> {project.meta?.type}
+              </p>
+
+              {project.meta?.highlights?.[lang]?.length > 0 && (
+                <>
+                  <h3>{singleProjectTexts.meta.highlights}</h3>
+
+                  <ul>
+                    {project.meta.highlights?.[lang]?.map((item, index) => (
+                      <li key={`${item}-${index}`}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          )}
+        </section>
 
         {screenshots.length > 0 && (
           <section className="project-screenshots">
-            <h2>Screenshots</h2>
+            <h2>{singleProjectTexts.screenshotsTitle}</h2>
+
             <div className="screenshots-grid">
               {visibleScreenshots.map((screenshot, index) => (
                 <img
@@ -165,46 +248,28 @@ export default function SingleProject({ lang }) {
               <button
                 type="button"
                 className="text-toggle trapezoid-button"
-                onClick={() => setShowMoreScreenshots((value) => !value)}
+                onClick={() =>
+                  setShowMoreScreenshots((value) => !value)
+                }
               >
-                {showMoreScreenshots ? 'Show less screenshots' : 'Show all screenshots'}
+                {showMoreScreenshots
+                  ? singleProjectTexts.screenshots[0]
+                  : singleProjectTexts.screenshots[1]}
               </button>
             )}
           </section>
         )}
 
-        <div className="project-meta">
-          <button
-            type="button"
-            className="meta-toggle trapezoid-button"
-            onClick={() => setShowMeta((value) => !value)}
-          >
-            {showMeta ? 'Hide meta' : 'Show meta'}
-          </button>
-
-          {showMeta && (
-            <div className="meta-panel">
-              <p><strong>Engine:</strong> {project.meta?.engine}</p>
-              <p><strong>Dimension:</strong> {project.meta?.dimension}</p>
-              <p><strong>Role:</strong> {renderMetaValue(project.meta?.role)}</p>
-              <p><strong>Team size:</strong> {project.meta?.teamSize}</p>
-              <p><strong>Year:</strong> {project.meta?.year}</p>
-              <p><strong>Type:</strong> {project.meta?.type}</p>
-
-              {project.meta?.highlights?.length > 0 && (
-                <>
-                  <h3>Meta highlights</h3>
-                  <ul>
-                    {project.meta.highlights.map((item, index) => (
-                      <li key={`${item}-${index}`}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
-          )}
-        </div>
       </section>
+
+      <div className="project-bottom-nav">
+        <Link to="/home" className="back-link trapezoid-button trapezoid-button--ghost">
+            <span className="trapezoid-button__inner">
+              {singleProjectTexts.backButton}
+            </span>
+        </Link>
+      </div>
+
     </div>
   );
 }

@@ -4,34 +4,39 @@ import Resume from '../Resume_Roggero_Shawn.pdf';
 import { texts } from '../code/texts';
 
 export default function Footer({lang}) {
+
+  const footerTexts = texts[lang]?.footer ?? texts.en.footer;
+  const contactTexts = texts.contactInfos;
+  const socialTexts = texts.socialLinks;
+
   return (
     <div className='Footer'>
       <div>
         <p>
           <a target='_blank' href="mailto: shawnroggero+professionnel@hotmail.com">
-            {texts.contactInfos.email}
+            {contactTexts.email}
           </a>
         </p>
         <p>
           <a target='_blank' href="tel:5143482065">
-            {texts.contactInfos.phone}
+            {contactTexts.phone}
           </a>
         </p>
       </div>
       <div>
         <p>
           <a target='_blank' href="https://www.linkedin.com/in/shawn-roggero-b37374262/">
-            {texts.socialLinks.linkedin}
+            {socialTexts.linkedin}
           </a>
         </p>
         <p>
           <a target='_blank' href="https://github.com/ShawnOboy">
-            {texts.socialLinks.github}
+            {socialTexts.github}
           </a>
         </p>
         <p>
           <a target='_blank' href="https://shawnoboy.itch.io/">
-            {texts.socialLinks.itch}
+            {socialTexts.itch}
           </a>
         </p>
       </div>

@@ -7,7 +7,7 @@ import '../sass/Projects.scss';
 // ----- Default export for Projects -----
 export default function Projects({ lang }) {
   // ----- Texts -----
-  const homeTexts = texts[lang]?.home ?? texts.en.home;
+  const projectsTexts = texts[lang]?.projectSection ?? texts.en.projectSection;
 
   // ----- Data -----
   const allProjects = getProjects(lang);
@@ -23,7 +23,7 @@ export default function Projects({ lang }) {
   const [filterEngine, setFilterEngine] = useState('all');
   const [filterDimension, setFilterDimension] = useState('all');
   const [filterType, setFilterType] = useState('all');
-  const [visibleCount, setVisibleCount] = useState(2);
+  const [visibleCount, setVisibleCount] = useState(5);
 
   // ----- Keep carousel index valid -----
   useEffect(() => {
@@ -89,8 +89,24 @@ export default function Projects({ lang }) {
     });
 
     return [...filteredProjects].sort((left, right) => {
-      if (sortBy === 'date-asc') return (left.meta?.year ?? 0) - (right.meta?.year ?? 0);
-      if (sortBy === 'date-desc') return (right.meta?.year ?? 0) - (left.meta?.year ?? 0);
+      if (sortBy === 'date-asc') {
+        const yearDifference = (left.meta?.year ?? 0) - (right.meta?.year ?? 0);
+
+        if (yearDifference !== 0) {
+          return yearDifference;
+        }
+
+        return left.order - right.order;
+      }
+      if (sortBy === 'date-desc') {
+        const yearDifference = (right.meta?.year ?? 0) - (left.meta?.year ?? 0);
+
+        if (yearDifference !== 0) {
+          return yearDifference;
+        }
+
+        return right.order - left.order;
+      }
       if (sortBy === 'name-asc') return left.name.localeCompare(right.name);
       if (sortBy === 'name-desc') return right.name.localeCompare(left.name);
       return 0;
@@ -101,14 +117,14 @@ export default function Projects({ lang }) {
 
   // ----- Reset visible amount on sort/filter change -----
   useEffect(() => {
-    setVisibleCount(2);
+    setVisibleCount(5);
   }, [sortBy, filterEngine, filterDimension, filterType]);
 
   return (
     <div className="ProjectsSection">
       {/* ----- Featured Carousel ----- */}
       <section className="featured">
-        <h2>{homeTexts.projectsSection}</h2>
+        <h2>{projectsTexts.featuredTitle}</h2>
 
         {currentFeatured ? (
           <div
@@ -169,68 +185,68 @@ export default function Projects({ lang }) {
         )}
       </section>
 
-      {/* ----- Controls ----- */}
-      <section className="projects-controls">
-        <div className="control-group">
-          <label htmlFor="sortBy">Sort</label>
-          <select
-            id="sortBy"
-            value={sortBy}
-            onChange={(event) => setSortBy(event.target.value)}
-          >
-            <option value="date-desc">Date: new to old</option>
-            <option value="date-asc">Date: old to new</option>
-            <option value="name-asc">Name: A to Z</option>
-            <option value="name-desc">Name: Z to A</option>
-          </select>
-        </div>
-
-        <div className="control-group">
-          <label htmlFor="filterEngine">Engine</label>
-          <select
-            id="filterEngine"
-            value={filterEngine}
-            onChange={(event) => setFilterEngine(event.target.value)}
-          >
-            <option value="all">All</option>
-            <option value="Unity">Unity</option>
-            <option value="Unreal">Unreal</option>
-            <option value="vanilla-js">JavaScript</option>
-          </select>
-        </div>
-
-        <div className="control-group">
-          <label htmlFor="filterDimension">Dimension</label>
-          <select
-            id="filterDimension"
-            value={filterDimension}
-            onChange={(event) => setFilterDimension(event.target.value)}
-          >
-            <option value="all">All</option>
-            <option value="2D">2D</option>
-            <option value="3D">3D</option>
-          </select>
-        </div>
-
-        <div className="control-group">
-          <label htmlFor="filterType">Type</label>
-          <select
-            id="filterType"
-            value={filterType}
-            onChange={(event) => setFilterType(event.target.value)}
-          >
-            <option value="all">All</option>
-            <option value="school project">School project</option>
-            <option value="game jam">Game jam</option>
-            <option value="team project">Team project</option>
-            <option value="tool">Tool</option>
-          </select>
-        </div>
-      </section>
-
       {/* ----- Projects List ----- */}
       <section className="projects-list">
-        <h3>{homeTexts.projectsSectionListTitle || 'Projects'}</h3>
+        <h3>{projectsTexts.allProjectsTitle}</h3>
+
+        {/* ----- Controls ----- */}
+        <section className="projects-controls">
+          <div className="control-group">
+            <label htmlFor="sortBy">{projectsTexts.sortingText.sort}</label>
+            <select
+              id="sortBy"
+              value={sortBy}
+              onChange={(event) => setSortBy(event.target.value)}
+            >
+              <option value="date-desc">{projectsTexts.sortingText.sortOptions[0]}</option>
+              <option value="date-asc">{projectsTexts.sortingText.sortOptions[1]}</option>
+              <option value="name-asc">{projectsTexts.sortingText.sortOptions[2]}</option>
+              <option value="name-desc">{projectsTexts.sortingText.sortOptions[3]}</option>
+            </select>
+          </div>
+
+          <div className="control-group">
+            <label htmlFor="filterEngine">{projectsTexts.sortingText.engine}</label>
+            <select
+              id="filterEngine"
+              value={filterEngine}
+              onChange={(event) => setFilterEngine(event.target.value)}
+            >
+              <option value="all">{projectsTexts.sortingText.engineOptions[0]}</option>
+              <option value="Unity">{projectsTexts.sortingText.engineOptions[1]}</option>
+              <option value="Unreal">{projectsTexts.sortingText.engineOptions[2]}</option>
+              <option value="vanilla-js">{projectsTexts.sortingText.engineOptions[3]}</option>
+            </select>
+          </div>
+
+          <div className="control-group">
+            <label htmlFor="filterDimension">{projectsTexts.sortingText.dimension}</label>
+            <select
+              id="filterDimension"
+              value={filterDimension}
+              onChange={(event) => setFilterDimension(event.target.value)}
+            >
+              <option value="all">{projectsTexts.sortingText.dimensionOptions[0]}</option>
+              <option value="2D">{projectsTexts.sortingText.dimensionOptions[1]}</option>
+              <option value="3D">{projectsTexts.sortingText.dimensionOptions[2]}</option>
+            </select>
+          </div>
+
+          <div className="control-group">
+            <label htmlFor="filterType">{projectsTexts.sortingText.type}</label>
+            <select
+              id="filterType"
+              value={filterType}
+              onChange={(event) => setFilterType(event.target.value)}
+            >
+              <option value="all">{projectsTexts.sortingText.typeOptions[0]}</option>
+              <option value="school project">{projectsTexts.sortingText.typeOptions[1]}</option>
+              <option value="game jam">{projectsTexts.sortingText.typeOptions[2]}</option>
+              <option value="team project">{projectsTexts.sortingText.typeOptions[3]}</option>
+              <option value="tool">{projectsTexts.sortingText.typeOptions[4]}</option>
+            </select>
+          </div>
+        </section>
 
         <div className="projects-grid">
           {displayedProjects.map((project) => (
@@ -261,13 +277,15 @@ export default function Projects({ lang }) {
         </div>
 
         {visibleCount < sortedProjects.length && (
-          <button
-            type="button"
-            className="show-more"
-            onClick={() => setVisibleCount((count) => count + 2)}
-          >
-            Show more
-          </button>
+          <div className="show-more-container">
+            <button
+              type="button"
+              className="show-more trapezoid-button"
+              onClick={() => setVisibleCount((count) => count + 5)}
+            >
+              {projectsTexts.showMoreButton}
+            </button>
+          </div>
         )}
       </section>
     </div>

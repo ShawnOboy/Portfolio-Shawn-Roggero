@@ -11,7 +11,7 @@ import Projects from './Projects';
 export default function HomePage({ lang }) {
 
   // ----- Content for Home Page -----
-  const homeTexts = texts[lang].home ?? texts.en.home;
+  const heroTexts = texts[lang]?.heroSection ?? texts.en.heroSection;
   const projects = allProjects[lang] ?? allProjects.en;
 
   const scrollToProjects = () => {
@@ -25,19 +25,43 @@ export default function HomePage({ lang }) {
       {/* ----- Hero Section ----- */}
       <header className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">{homeTexts.heroTitle}</h1>
-          <p className="hero-sub">{homeTexts.heroSubtitle}</p>
+          <h1 className="hero-title">{heroTexts.heroTitle}</h1>
+          <p className="hero-sub">{heroTexts.heroSubtitle}</p>
 
           <div className="hero-ctas">
-            <Link className="btn btn--trapezoid" onClick={scrollToProjects}>
-              <span className="btn__shape">{homeTexts.projectsButton}</span>
-            </Link>
+            <button
+              type="button"
+              className="trapezoid-button"
+              onClick={scrollToProjects}
+            >
+              {heroTexts.projectsButton}
+            </button>
             {/* <button type="button" className="btn btn-primary trapezoid-button" onClick={scrollToProjects}>
               {homeTexts.projectsButton}
             </button> */}
-            <a target="_blank" rel="noopener noreferrer" href={Resume} className="btn btn--ghost-trapezoid">
-              <span className="btn__shape">{homeTexts.cv}</span>
-            </a>
+            <div className="resume-actions">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={Resume}
+                className="trapezoid-button trapezoid-button--ghost"
+              >
+                <span className="trapezoid-button__inner">
+                  {heroTexts.cv}
+                </span>
+              </a>
+
+              <a
+                href={Resume}
+                download="resume_roggero_shawn.pdf"
+                className="trapezoid-button trapezoid-button--ghost download-button"
+                aria-label={heroTexts.downloadCv}
+              >
+                <span className="trapezoid-button__inner">
+                  ↓
+                </span>
+              </a>
+            </div>
             {/* <a target="_blank" rel="noopener noreferrer" href={Resume} className="btn btn-outline trapezoid-button">
               {homeTexts.cv}
             </a> */}
@@ -54,16 +78,6 @@ export default function HomePage({ lang }) {
       <section id="projects" className="home-section">
         <Projects lang={lang} projects={projects} />
       </section>
-
-      {/* ----- Resume Section ----- */}
-      <div className="cv-row">
-        <a target="_blank" rel="noopener noreferrer" href={Resume} className="btn btn-primary">
-          {homeTexts.cv}
-        </a>
-        <a href={Resume} download="resume_roggero_shawn.pdf" className="btn btn-ghost">
-          {homeTexts.downloadCv}
-        </a>
-      </div>
 
     </main>
   );

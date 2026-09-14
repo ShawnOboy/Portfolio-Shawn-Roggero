@@ -1,14 +1,13 @@
-import '../sass/About.scss'
+import '../sass/About.scss';
 import { texts } from "../code/texts";
+import { backgrounds } from '../code/images';
 
 // ----- Default export for About Section -----
 
 export default function About({ lang }) {
 
-  // ----- Content for About Section -----
-  const about = texts[lang].about;
+  const aboutTexts = texts[lang]?.aboutSection ?? texts.en.aboutSection;
 
-  // Render one list of items
   const renderList = (items) => (
     <ul>
       {items.map((item, index) => (
@@ -24,19 +23,29 @@ export default function About({ lang }) {
 
   return (
     <div className="About">
-      <h1>{texts[lang].home.aboutSection}</h1>
+
+      <h1>{aboutTexts.aboutTitle}</h1>
+
+      <div className="about-image about-image--top">
+        <img src={backgrounds.aboutTopRight} />
+      </div>
 
       <div className="about-block about-currentState">
-        {renderList(about.currentState)}
+        {renderList(aboutTexts.currentState)}
       </div>
 
       <div className="about-block about-goals">
-        {renderList(about.goals)}
+        {renderList(aboutTexts.goals)}
       </div>
 
       <div className="about-block about-enjoyments">
-        {renderList(about.enjoyments)}
+        {renderList(aboutTexts.enjoyments)}
       </div>
+
+      <div className="about-image about-image--bottom">
+        <img src={backgrounds.aboutBottomLeft} />
+      </div>
+
     </div>
   );
 }
