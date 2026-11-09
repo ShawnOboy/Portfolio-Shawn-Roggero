@@ -842,7 +842,7 @@ export const projects = [
           "Sly n' Ky is a local couch co-op game where you can jump, chomp, propel yourself and collect candies.",
           "The game was created during the Ubisoft Game Lab competition with the givent theme of 80s-90s years vibe, so we made a retro-style game with a slinky played by two players, where each one controls one end of the slinky, and they must work together to solve puzzles and progress through the levels.",
           "The game was awarded the Best Prototype award and was nominated in five other categories, including Best quality of the 3C, Best User Experience, Best Creativity and Integration of the Theme, Best Game Design and Best Technical Challenge and Innovation.",
-          "I was designated as the lead programmer of the team, and have been working along with two other programmers. I was responsible for implementing the core gameplay mechanics of the slinky, working tightly with another programmer that worked on the character controllers, and the third programmer worked on most interactive objects and puzzles.",
+          "I was designated as the lead programmer of the team, and have been working along with two other programmers. I was responsible for implementing the core gameplay mechanics of the slinky, working tightly with the other programmers that worked on the character controllers and on most interactive objects and puzzles.",
           "I also worked on lesser features like the UI, screenshots feature and fixing many bugs and issues to make sure the game was polished and ready for the competition.",
           "This is the project I am most proud of, it was one of the most intense moment I had lived, lots of stress and pressure during the reveal that meant that what we've accomplished was good enough to be recognized by Ubisoft, turns out it was!",
           "I learned a lot about working with the team, we had highs and lows, but we managed to work together and make a great game, and I am proud of what we've accomplished, and I don't know how much I can say it to express how proud I am of this project.",
@@ -861,7 +861,7 @@ export const projects = [
           "Sly n' Ky est un jeu coopératif local où vous pouvez sauter, mordre, vous propulser et collecter des bonbons.",
           "Le jeu a été créé pendant le concours Ubisoft avec le thème donné du vibe des années 80-90, donc nous avons fait un jeu de style rétro avec un slinky joué par deux joueurs, où chacun contrôle une extrémité du slinky, et ils doivent travailler ensemble pour résoudre des énigmes et progresser dans les niveaux.",
           "Le jeu a remporté le prix du Meilleur Prototype et a été nominé dans cinq autres catégories, y compris la Meilleure qualité des 3C, la Meilleure expérience utilisateur, la Meilleure créativité et intégration du thème, le Meilleur game design et le Meilleur défi technique et innovation.",
-          "J'ai été désigné comme le lead programmeur de l'équipe et j'ai travaillé avec deux autres programmeurs. J'étais responsable de l'implémentation de la mécanique de jeu principale du slinky, travaillant en étroite collaboration avec un autre programmeur qui travaillait sur les contrôles du personnages, et le troisième programmeur travaillait sur la plupart des objets interactifs et des énigmes.",
+          "J'ai été désigné comme le lead programmeur de l'équipe et j'ai travaillé avec deux autres programmeurs. J'étais responsable de l'implémentation de la mécanique de jeu principale du slinky, travaillant en collaboration avec les autres programmeurs qui travaillaient sur les contrôles du personnages et sur la plupart des objets interactifs et des énigmes.",
           "J'ai également travaillé sur des fonctionnalités moins importantes comme le UI, la fonction de capture d'écran et la correction de nombreux bugs et problèmes pour m'assurer que le jeu était poli et prêt pour le concours.",
           "C'est le projet dont je suis le plus fier, c'était l'un des moments les plus intenses que j'ai vécus, beaucoup de stress et de pression pendant la révélation qui signifiait que ce que nous avons accompli était suffisamment bon pour être reconnu par Ubisoft, et c'était bien le cas!",
           "J'ai beaucoup appris avec mon équipe, nous avons eu des hauts et des bas, mais nous avons réussi à travailler ensemble et à créer un excellent jeu, et je suis fier de ce que nous avons accompli, et je ne sais pas combien je peux le dire pour exprimer à quel point je suis fier de ce projet.",
@@ -878,11 +878,11 @@ export const projects = [
   },
 
   // -----------------------------------------
-  // World Making Tool
+  // World Maker Tool
   // -----------------------------------------
   {
-    id: "world-making-tool",
-    slug: "world-making-tool",
+    id: "world-maker-tool",
+    slug: "world-maker-tool",
     status: "active",
     featured: 2,
     images: worldMakingToolImages,
@@ -901,34 +901,62 @@ export const projects = [
       type: "tool",
       highlights: {
         en: [
-
+          "Graph Generation",
+          "Modular Components",
+          "Generation Pipeline",
+          "Procedural Terrain",
+          "Dynamic Loading",
+          "Graph Visualization"
         ],
         fr: [
-
+          "Graphes procéduraux",
+          "Composants modulaires",
+          "Pipeline de génération",
+          "Terrain procédural",
+          "Chargement dynamique",
+          "Visualisation des graphes"
         ]
       },
     },
     tags: {
-      en: ["unity 3d", "tool", "procedural generation"],
-      fr: ["unity 3d", "outil", "génération procédurale"],
+      en: ["unreal engine", "tool", "procedural generation", "modular architecture", "component-based system", "plugin"],
+      fr: ["unreal engine", "outil", "génération procédurale", "architecture modulaire", "système à base de composants", "plugin"],
     },
     translations: {
       en: {
-        name: "World Making Tool",
+        name: "World Maker Tool - Work in Progress",
         description: [
-          "More details about this project will be added soon.",
+          "World Maker Tool is a tool that allows users to create worlds from a component-based system, designed as a reusable plugin for future projects.",
+          "Its core concept is designed to create and manage a network of interconnected procedural worlds, each with their own characteristics, generation settings and connections to other worlds.",
+          "The reason for making this at first was to start developing the foundation for a potential game, which is 'Non-euclidean multiverse with interconnected procedurally generated worlds and seamless portal travel between them', and that sounds very cool, and allows many ideas to emerge from it.",
+          "The idea with this tool was to have a modular architecture, using data-driven world generation and a component-based system, this way it's easier to create new components without breaking already existing worlds, and allows an easy approach for designers that creates these world, adding the components they need and changing their settings.",
+          "As I already said, the idea is to support a non-euclidean multiverse where a player can seamlessly travel between worlds, so the tool already supports a dynamic loading system and currently only renders the current world.",
+          "Something that will be added in the future is the rendering of the connected worlds through portals, but that a challenge for another time."
         ],
         highlights: [
-
+          "Procedural World Graph Generation",
+          "Modular World Component System",
+          "Scalable Generation Pipeline",
+          "Custom Procedural Terrain Generation",
+          "World Graph Visualization",
         ],
       },
       fr: {
-        name: "Outil de création de mondes",
+        name: "World Maker Tool - Travail en cours",
         description: [
-          "Plus de détails sur ce projet seront ajoutés bientôt.",
+          "World Maker Tool est un outil de création de mondes qui permet aux utilisateurs de créer des mondes à partir d'un système basé sur des composants et est développé sous forme de plugin réutilisable pour des projets futurs.",
+          "Son concept principal consiste à créer et à gérer un réseau de mondes procéduraux interconnectés, chacun possédant ses propres caractéristiques, paramètres de génération et connexions avec d'autres mondes.",
+          "Au début, ce projet avait pour objectif de faire les bases d'un jeu potentiel, qui serait un 'multivers non-euclidien composé de mondes générés procéduralement et interconnectés', entre lesquels le joueur pourrait voyager de manière fluide à travers des portails. C'est un concept qui m'intéresse beaucoup, parce qu'il permet plusieurs possibilités de gameplay.",
+          "L'outil suit une architecture modulaire qui combine une génération de mondes basée sur du data et un système de composants. C'est une approche qui facilite l'ajout de nouvelles fonctionnalités sans briser les mondes existants, et en offrant aux designers une manière intuitive de créer des mondes en sélectionnant les composants nécessaires et en ajustant leurs paramètres.",
+          "Comme mentionné, le but est de permettre au joueur de voyager librement entre les mondes de ce multivers non-euclidien, donc l'outil intègre déjà un système de chargement dynamique et n'affiche actuellement que le monde dans lequel se trouve le joueur.",
+          "Une prochaine étape sera de permettre l'affichage des mondes connectés à travers les portails, un défi à explorer plus tard."
         ],
         highlights: [
-
+          "Génération procédurale de graphes de mondes",
+          "Système modulaire de composants de monde",
+          "Pipeline de génération évolutif",
+          "Génération de terrains procéduraux personnalisés",
+          "Visualisation des graphes de mondes"
         ],
       },
     },
